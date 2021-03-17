@@ -1,0 +1,493 @@
+---
+actions:
+  - action_check_advanced
+  - action_check_id
+  - action_check_slot_date
+  - action_check_slot_price
+  - action_check_slot_skillsfuture
+  - action_find_course
+  - action_get_avail_rooms
+  - action_inform_poc
+  - action_repeat
+  - action_replace_slots
+  - action_send_sms
+  - action_clear_slots
+  - utter_ask_booking_duration
+  - utter_ask_booking_pax
+  - utter_ask_booking_start_time
+  - utter_ask_room_name
+  - utter_booking_name
+  - utter_cancel
+  - utter_certified
+  - utter_check
+  - utter_confirm_attendance
+  - utter_confirm_booking
+  - utter_correct
+  - utter_course_type
+  - utter_default
+  - utter_display_map
+  - utter_display_notif
+  - utter_employee_id
+  - utter_get_info
+  - utter_goodbye
+  - utter_inform_poc
+  - utter_input
+  - utter_isbot
+  - utter_lessons
+  - utter_meeting_who
+  - utter_more_information
+  - utter_name
+  - utter_not_interested
+  - utter_online
+  - utter_payment
+  - utter_pick
+  - utter_prerequisites
+  - utter_qr_handoff
+  - utter_registered
+  - utter_skillsfuture_claim
+  - utter_start
+  - utter_type
+entities:
+  - attendance
+  - book_room
+  - booking_duration
+  - booking_name
+  - booking_pax
+  - booking_start_time
+  - course_name
+  - course_type
+  - id
+  - map
+  - name
+  - notifications
+  - option
+  - poc_name
+  - room_name
+  - user_number
+forms:
+  - meeting_room_form
+intents:
+  - greet
+  - meetings
+  - name
+  - poc_name
+  - booking_name
+  - affirm
+  - booking_duration
+  - book_room
+  - room_name
+  - notifications
+  - employee_id
+  - booking_pax
+  - goodbye
+  - deny
+  - ask_isbot
+  - course_type
+  - choose_course
+  - alternate_course
+  - more_information
+  - bot_pick
+  - user_info
+  - register_another
+  - price
+  - number_of_lessons
+  - skillsfuture
+  - start_date
+  - online
+  - certification
+  - cancel
+  - skillsfuture_claim
+  - payment_modes
+  - prerequisites
+  - not_interested
+  - course_registration
+  - booking_start_time
+  - attendance
+  - map
+  - restart
+  - fallback
+  - undo
+  - user_input
+  - repeat
+responses:
+  utter_ask_booking_duration:
+    -
+      text: "Okay, may I know how long will the meeting be?"
+    -
+      text: "Sure! How long will the meeting be?"
+    -
+      text: "Alright! How long would you like to book the room for?"
+  utter_ask_booking_pax:
+    -
+      text: "How about the number of people attending this meeting?"
+    -
+      text: "So how many people are attending this meeting?"
+    -
+      text: "Okay, and how many people will be at this meeting?"
+  utter_ask_booking_start_time:
+    -
+      text: "When does the meeting start?"
+    -
+      text: "So what time does the meeting start?"
+    -
+      text: "What time should the booking start?"
+  utter_ask_room_name:
+    -
+      buttons:
+        -
+          payload: "/room_name{\"room_name\":\"Room A\"}"
+          title: "Room A"
+        -
+          payload: "/room_name{\"room_name\":\"Room B\"}"
+          title: "Room B"
+        -
+          payload: "/room_name{\"room_name\":\"Room C\"}"
+          title: "Room C"
+        -
+          payload: "/room_name{\"room_name\":\"Room D\"}"
+          title: "Room D"
+        -
+          payload: "/room_name{\"room_name\":\"Room E\"}"
+          title: "Room E"
+      text: "Which room would you like to book?"
+    -
+      buttons:
+        -
+          payload: "/room_name{\"room_name\":\"Room A\"}"
+          title: "Room A"
+        -
+          payload: "/room_name{\"room_name\":\"Room B\"}"
+          title: "Room B"
+        -
+          payload: "/room_name{\"room_name\":\"Room C\"}"
+          title: "Room C"
+        -
+          payload: "/room_name{\"room_name\":\"Room D\"}"
+          title: "Room D"
+        -
+          payload: "/room_name{\"room_name\":\"Room E\"}"
+          title: "Room E"
+      text: "Which meeting room would you like?"
+    -
+      buttons:
+        -
+          payload: "/room_name{\"room_name\":\"Room A\"}"
+          title: "Room A"
+        -
+          payload: "/room_name{\"room_name\":\"Room B\"}"
+          title: "Room B"
+        -
+          payload: "/room_name{\"room_name\":\"Room C\"}"
+          title: "Room C"
+        -
+          payload: "/room_name{\"room_name\":\"Room D\"}"
+          title: "Room D"
+        -
+          payload: "/room_name{\"room_name\":\"Room E\"}"
+          title: "Room E"
+      text: "Which room would you prefer?"
+  utter_booking_name:
+    -
+      text: "May I know what's your name?"
+    -
+      text: "May I have your name please?"
+    -
+      text: "May I get your name please?"
+  utter_cancel:
+    -
+      text: "Yup you can cancel anytime!"
+    -
+      text: "No worries, you can cancel when you want to!"
+    -
+      text: "Feel free to cancel anytime!"
+  utter_certified:
+    -
+      text: "Of course! We will issue a certification from our institute. Our instructors are actually very experienced too!"
+    -
+      text: "Of course! You will receive a certificate after completing the course."
+  utter_check:
+    -
+      text: "Sure! I'll check for you..."
+    -
+      text: "Okay! Let me check..."
+  utter_confirm_attendance:
+    -
+      text: "Okay done! Your attendance has been registered. Bye and have a great day!"
+    -
+      text: "Terrific! Your attendance has been registered. Bye and have a great day!"
+  utter_confirm_booking:
+    -
+      text: "Great! You have successfully booked the room. Please ensure you reach on time to prevent forfeiting your booking. Bye and have a great day!"
+  utter_correct:
+    -
+      text: "You are {name} coming to meet {poc_name}.  Is that correct?"
+  utter_course_found:
+    -
+      buttons:
+        -
+          payload: "/choose_course{\"course_name\": \"course_name\"}"
+          title: "{course_one}"
+        -
+          payload: "/choose_course{\"course_name\": \"course_name\"}"
+          title: "{course_two}"
+        -
+          payload: "/choose_course{\"course_name\": \"course_name\"}"
+          title: "{course_three}"
+      text: "We have these courses. Which course would you like?"
+  utter_course_type:
+    -
+      text: "May I know what type of courses are you looking for?"
+    -
+      text: "May I know what kind of courses are you interested in?"
+  utter_default:
+    -
+      text: "Oops sorry I didn't catch that. Can you please repeat?"
+    -
+      text: "I'm sorry I couldn't hear you properly, can you say that again?"
+    -
+      text: "Sorry its my first day... Can you repeat please?"
+  utter_display_map:
+    -
+      image: "https://qph.fs.quoracdn.net/main-qimg-6fe3fddd50ca85b8e07b517325047720"
+      text: "Alright, here you go!"
+    -
+      image: "https://qph.fs.quoracdn.net/main-qimg-6fe3fddd50ca85b8e07b517325047720"
+      text: "Sure, here's the map!"
+  utter_display_notif:
+    -
+      text: "Alright, here you go!"
+    -
+      text: "Sure thing! Here you go!"
+    -
+      text: "Here it is!"
+  utter_employee_id:
+    -
+      text: "Can you please enter your employee ID here?"
+    -
+      text: "Please tell me your employee ID."
+  utter_get_info:
+    -
+      text: "Okay! To proceed, I'll need your mobile number."
+    -
+      text: "Okay! Can I get your mobile number for registration please?"
+  utter_goodbye:
+    -
+      text: "Bye bye! Talk to you again!"
+    -
+      text: "Thank you! Bye and have a great day!"
+  utter_inform_poc:
+    -
+      text: "Okay, please wait a moment while I notify {poc_name}. Thank you and have a nice day!"
+    -
+      text: "Okay, please give me a short while to notify {poc_name}. Thank you and have a nice day!"
+  utter_input:
+    -
+      text: "Remember to click submit!"
+  utter_isbot:
+    -
+      text: "I am a smart AI assistant, at your service!"
+    -
+      text: "I am Yoozoo's very own AI receptionist, at you service!"
+  utter_lessons:
+    -
+      text: "Each course consists of 10 2-hr lessons."
+  utter_meeting_who:
+    -
+      text: "Okay, may I ask who you're meeting?"
+    -
+      text: "Alright, and may I know who are you meeting?"
+  utter_more_information:
+    -
+      text: "You can check out our website (website) for more information. So, which course would you like?"
+    -
+      text: "You can visit our website (website) for more details on the courses. So, which course would you like?"
+  utter_name:
+    -
+      text: "May I know your name or your company's name?"
+  utter_not_interested:
+    -
+      text: "Awww… it's alright then. Thank you for your interest in our courses. Talk to you again!"
+    -
+      text: "Awww… okay. Do come back if you've changed your mind. Bye bye!"
+  utter_online:
+    -
+      text: "Yup, they are online courses and instructor led."
+    -
+      text: "Yeah, you can do the course online at your own pace."
+    -
+      text: "Yes, the courses are all online!"
+  utter_payment:
+    -
+      text: "Don't worry, we accept all major credit cards!"
+    -
+      text: "We accept all major credit cards, no worries!"
+    -
+      text: "Fret not, we take all major credit cards!"
+  utter_pick:
+    -
+      text: "Hmm, I think you should pick the course yourself."
+    -
+      text: "Hmm, I'll let you decide for yourself."
+  utter_prerequisites:
+    -
+      text: "No worries, they are not compulsory. You can check out recommended pre-requisites on our website! Shall we continue?"
+    -
+      text: "It's okay, they are not compulsory. You can check out recommended pre-requisites on our website! Shall we continue?"
+  utter_qr_handoff:
+    -
+      text: "You can scan this QR code to view it on your phone. Bye and have a great day!"
+  utter_registered:
+    -
+      text: "Great! I've registered you and you will be receiving a confirmation. Thank you for your interest in our courses and talk to you soon!"
+    -
+      text: "Okay! You have successfully registered for the course. Check your phone for a confirmation message! Bye bye and talk to you soon!"
+  utter_skillsfuture_claim:
+    -
+      text: "Sure thing! I'll send you the relevant instructions for SkillsFuture with the confirmation SMS."
+    -
+      text: "No problem! I'll send you the relevant information for SkillsFuture with your confirmation SMS."
+  utter_start:
+    -
+      buttons:
+        -
+          payload: "/meetings{\"option\":\"Delivery\"}"
+          title: Delivery
+        -
+          payload: "/meetings{\"option\":\"New Employee\"}"
+          title: "New Staff Enrolment"
+        -
+          payload: "/meetings{\"option\":\"Interview\"}"
+          title: Interview
+        -
+          payload: "/meetings{\"option\":\"Meeting\"}"
+          title: Meeting
+        -
+          payload: "/meetings{\"option\":\"Servicing\"}"
+          title: Servicing
+        -
+          payload: /course_registration
+          title: "Course Registration"
+        -
+          payload: "/book_room{\"book_room\":\"room-booking\"}"
+          title: "Book Meeting Room"
+        -
+          payload: "/attendance{\"attendance\":\"Attendance\"}"
+          title: Attendance
+        -
+          payload: "/notifications{\"notifications\":\"Notifications\"}"
+          title: Notifications
+        -
+          payload: "/map{\"map\":\"Office Map\"}"
+          title: "Office Map"
+      text: "Hello! Welcome to Yoozoo Singapore, how can I help you today?"
+    -
+      buttons:
+        -
+          payload: "/meetings{\"option\":\"Delivery\"}"
+          title: Delivery
+        -
+          payload: "/meetings{\"option\":\"New Employee\"}"
+          title: "New Staff Enrolment"
+        -
+          payload: "/meetings{\"option\":\"Interview\"}"
+          title: Interview
+        -
+          payload: "/meetings{\"option\":\"Meeting\"}"
+          title: Meeting
+        -
+          payload: "/meetings{\"option\":\"Servicing\"}"
+          title: Servicing
+        -
+          payload: /course_registration
+          title: "Course Registration"
+        -
+          payload: "/book_room{\"book_room\":\"room-booking\"}"
+          title: "Book Meeting Room"
+        -
+          payload: "/attendance{\"attendance\":\"Attendance\"}"
+          title: Attendance
+        -
+          payload: "/notifications{\"notifications\":\"Notifications\"}"
+          title: Notifications
+        -
+          payload: "/map{\"map\":\"Office Map\"}"
+          title: "Office Map"
+      text: "Hello! Welcome to Yoozoo Singapore, what can I do for you today?"
+    -
+      buttons:
+        -
+          payload: "/meetings{\"option\":\"Delivery\"}"
+          title: Delivery
+        -
+          payload: "/meetings{\"option\":\"New Employee\"}"
+          title: "New Staff Enrolment"
+        -
+          payload: "/meetings{\"option\":\"Interview\"}"
+          title: Interview
+        -
+          payload: "/meetings{\"option\":\"Meeting\"}"
+          title: Meeting
+        -
+          payload: "/meetings{\"option\":\"Servicing\"}"
+          title: Servicing
+        -
+          payload: /course_registration
+          title: "Course Registration"
+        -
+          payload: "/book_room{\"book_room\":\"room-booking\"}"
+          title: "Book Meeting Room"
+        -
+          payload: "/attendance{\"attendance\":\"Attendance\"}"
+          title: Attendance
+        -
+          payload: "/notifications{\"notifications\":\"Notifications\"}"
+          title: Notifications
+        -
+          payload: "/map{\"map\":\"Office Map\"}"
+          title: "Office Map"
+      text: "Hello! Welcome to Yoozoo Singapore, what brings you here today?"
+  utter_type:
+    -
+      text: "Oops sorry couldn't hear you properly, please type your response instead!"
+    -
+      text: "Oh sorry I didn't catch that, can you please type here instead?"
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  attendance:
+    type: text
+  book_room:
+    type: text
+  booking_duration:
+    type: unfeaturized
+  booking_name:
+    type: unfeaturized
+  booking_pax:
+    type: unfeaturized
+  booking_start_time:
+    type: unfeaturized
+  course_found:
+    type: text
+  course_name:
+    type: text
+  course_type:
+    type: text
+  id:
+    type: text
+  map:
+    type: text
+  name:
+    type: text
+  notifications:
+    type: text
+  option:
+    type: text
+  poc_name:
+    type: text
+  requested_slot:
+    type: unfeaturized
+  room_name:
+    type: unfeaturized
+  user_number:
+    type: text
